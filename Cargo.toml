@@ -1,0 +1,16 @@
+[package]
+name = "aprs_workout_stats"
+version = "0.1.0"
+edition = "2021"
+homepage = "https://github.com/Frixxie/aprs_workout_stats"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+geo = "0.25.1"
+mongodb = "2.6.0"
+reqwest = { version = "0.11.18", features = ["json"] }
+serde = "1.0.166"
+serde_json = "1.0.100"
+structopt = { version = "0.3.26", features = ["color"] }
+tokio = { version = "1.29.1", features = ["full"] }

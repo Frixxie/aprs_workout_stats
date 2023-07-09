@@ -24,7 +24,7 @@ pub struct Opts {
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let opts = Opts::from_args();
 
-    let mut client = mongodb::Client::with_uri_str(&opts.mongodb).await?;
+    let client = mongodb::Client::with_uri_str(&opts.mongodb).await?;
     let db = client.database("aprs");
     let collection = db.collection("location");
 

@@ -26,6 +26,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let collection = db.collection("location");
 
     if opts.collect_data {
+        println!("Collecting data for {}...", opts.callsign);
         let client_builder = reqwest::Client::builder();
         static APP_USER_AGENT: &str = concat!(
             env!("CARGO_PKG_NAME"),
@@ -45,6 +46,8 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
             .await?
             .json::<location::Location>()
             .await?;
+        println!("Got data: {}", res);
+        println!("Inserting data into mongodb...");
         collection.insert_one(res, None).await?;
     }
 

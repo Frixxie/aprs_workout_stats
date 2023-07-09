@@ -120,3 +120,9 @@ pub struct Location {
     found: u32,
     entries: Vec<LocationEntry>,
 }
+
+impl Display for Location {
+    fn fmt(&self, f: &mut Formatter<'_>) -> fmt::Result {
+        write!(f, "Location: {} entries", self.found)
+    }
+}

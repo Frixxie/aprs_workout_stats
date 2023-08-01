@@ -11,6 +11,6 @@ geo = "0.26.0"
 mongodb = "2.6.0"
 reqwest = { version = "0.11.18", features = ["json"] }
 serde = "1.0.179"
-serde_json = "1.0.103"
+serde_json = "1.0.104"
 structopt = { version = "0.3.26", features = ["color"] }
 tokio = { version = "1.29.1", features = ["full"] }
